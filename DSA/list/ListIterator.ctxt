@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ListIterator
+comment0.text=\r\n\ Write\ a\ description\ of\ interface\ ListIterator\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=boolean\ hasPrevious()
+comment1.text=\r\n\ @return\ true\ if\ there\ is\ a\ previous\ value\r\n
+comment2.params=
+comment2.target=java.lang.Object\ previous()
+comment2.text=\r\n\ return\ previous\ value\ \r\n\ Pre\:\ hasPrevious()\ is\ true\r\n
+comment3.params=
+comment3.target=void\ remove()
+comment3.text=\r\n\ remove\ the\ last\ value\ obtained\ by\ next()\ or\ previous()\r\n\ Pre\:\ next\ or\ prev\ has\ been\ called\ since\ the\ last\ call\ to\ remove\r\n
+comment4.params=value
+comment4.target=void\ add(java.lang.Object)
+comment4.text=\ Insert\ the\ given\ value\ just\ prior\ to\ the\ implicit\ cursor\ position.\ A\ subsequent\ \r\n\ \ \ \ call\ to\ previous()\ should\ return\ the\ inserted\ value,\ and\ a\ subsequent\ call\ to\ next()\ should\ be\ \r\n\ \ \ \ unaffected.\r\n
+numComments=5

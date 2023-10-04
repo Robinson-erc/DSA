@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Iterator
+comment0.text=\r\n\ Permit\ the\ client\ to\ visit\ every\ value\ in\ a\ collection\r\n\ @author\ sdb&Eric\ Robinson\r\n
+comment1.params=
+comment1.target=boolean\ hasNext()
+comment1.text=\r\n\ @return\ true\ if\ there\ are\ more\ values\ to\ be\ visited\r\n
+comment2.params=
+comment2.target=java.lang.Object\ next()
+comment2.text=\r\n\ @return\ next\ value\ to\ be\ visted\ \r\n\ Pre\:\ hasNext()\ is\ true\r\n
+comment3.params=
+comment3.target=void\ remove()
+comment3.text=\r\n\ @Remove\ the\ last\ value\ returned\ by\ next()\r\n\ Pre\:\ next\ has\ been\ called\ atleast\ once\ since\ last\ call\ to\ remove()\r\n
+numComments=4

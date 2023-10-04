@@ -1,0 +1,52 @@
+#BlueJ class context
+comment0.target=List
+comment0.text=\r\nA\ list\ is\ an\ ordered\ collection;\ duplicates\r\npermitted\r\n@author\ Eric\ Robinson\r\n
+comment1.params=ndx
+comment1.target=java.lang.Object\ get(int)
+comment1.text=\r\n\ @\ return\ the\ value\ at\ given\ ndx\r\n\ @\ param\ 0\ <\=\ ndx\ <\ size\r\n
+comment10.params=obj
+comment10.target=boolean\ contains(java.lang.Object)
+comment10.text=@return\ true\ iff\ this\ List\ contains\ the\ given\ object
+comment11.params=
+comment11.target=Iterator\ iterator()
+comment11.text=\r\n\ return\ an\ iterator\ for\ this\ list\r\n
+comment12.params=
+comment12.target=boolean\ firstIsDuplicated()
+comment12.text=@return\ true\ iff\ the\ first\ value\ in\ this\ List\ is\ duplicated
+comment13.params=obj
+comment13.target=boolean\ remove(java.lang.Object)
+comment13.text=\ Remove\ the\ first\ occurrence\ of\ obj\ from\ this\ List,\ if\ possible.\r\n\ \ \ \ @return\ true\ iff\ the\ object\ was\ removed\r\n
+comment14.params=obj
+comment14.target=boolean\ equals(java.lang.Object)
+comment14.text=@return\ true\ iff\ the\ given\ Object\ is\ a\ List\ and\ this\ List\ is\ equal\ to\ the\ given\ List.
+comment15.params=
+comment15.target=ListIterator\ listIterator()
+comment15.text=\r\n\ return\ a\ ListIterator\ for\ this\ list\r\n
+comment16.params=ndx
+comment16.target=ListIterator\ listIterator(int)
+comment16.text=\r\n\ @return\ a\ ListIterator\ for\ this\ list\ beginning\ at\ the\ given\ ndx\ use\ size\ to\ begin\ at\ end\r\n
+comment2.params=ndx\ value
+comment2.target=java.lang.Object\ set(int,\ java.lang.Object)
+comment2.text=\r\n\ change\ the\ value\ at\ given\ ndx\ to\ the\ given\ value\r\n\ @param\r\n\ @return\ the\ old\ value\r\n
+comment3.params=value
+comment3.target=void\ add(java.lang.Object)
+comment3.text=\r\n\ add\ the\ given\ value\ at\ the\ end\ of\ the\ list\r\n
+comment4.params=ndx\ value
+comment4.target=void\ add(int,\ java.lang.Object)
+comment4.text=\r\n\ Insert\ the\ given\ value\ at\ given\ ndx\r\n\ @param\ 0<\=ndx<\=size\r\n
+comment5.params=ndx
+comment5.target=java.lang.Object\ remove(int)
+comment5.text=\r\n\ remove\ the\ value\ at\ the\ given\ ndx\r\n\ @return\ the\ value\ removed\r\n\ @param\ 0<\=x<size\r\n
+comment6.params=
+comment6.target=int\ size()
+comment6.text=@return\ the\ size\ of\ this\ List
+comment7.params=
+comment7.target=boolean\ isEmpty()
+comment7.text=@return\ true\ iff\ this\ List\ is\ empty
+comment8.params=
+comment8.target=void\ clear()
+comment8.text=Clear\ this\ List
+comment9.params=obj
+comment9.target=int\ indexOf(java.lang.Object)
+comment9.text=@return\ the\ index\ of\ the\ first\ occurrence\ of\ the\ given\ object\ in\ this\ List,\ or\ -1\ if\ not\ found
+numComments=17

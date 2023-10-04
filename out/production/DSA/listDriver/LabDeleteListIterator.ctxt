@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=LabDeleteListIterator
+comment0.text=\r\n\ \r\n\ @author\ (sdb\ and\ PUT\ YOUR\ NAME\ HERE\!)\ \r\n\ @version\ (Feb\ 2018)\r\n
+comment1.params=
+comment1.target=void\ main()
+comment2.params=
+comment2.target=void\ init()
+comment3.params=
+comment3.target=void\ test()
+comment4.params=
+comment4.target=void\ deleteFirstOfDup()
+comment4.text=\ Search\ the\ roster\ for\ the\ first\ pair\ of\ neighbors\ which\ are\r\n\ \ equal.\ \ Delete\ the\ first\ member\ of\ that\ pair.\r\n
+numComments=5

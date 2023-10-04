@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=RefIterator
+comment0.text=\r\n\ An\ iterator\ for\ linked\ lists\r\n\r\n\ @author\ sdb&(Eric\ Robinson)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=list
+comment1.target=RefIterator(LinkedList)
+comment2.params=
+comment2.target=boolean\ hasNext()
+comment3.params=
+comment3.target=java.lang.Object\ next()
+comment4.params=
+comment4.target=void\ remove()
+numComments=5

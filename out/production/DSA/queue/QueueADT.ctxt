@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=QueueADT
+comment0.text=\r\n\ A\ first\ in\ first\ out\ list\r\n\r\n\ @author\ SDB&(Eric\ R)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=value
+comment1.target=void\ add(java.lang.Object)
+comment1.text=\r\nadd\ the\ given\ value\ to\ this\ QueueADT\ \r\nadd\ the\ given\ value\ at\ the\ back\ of\ the\ list\r\n
+comment2.params=
+comment2.target=java.lang.Object\ peek()
+comment2.text=\r\n\ return\ the\ value\ at\ the\ front\ of\ this\ QueueADT\ or\ null\ if\ queue\ is\ empty\r\n
+comment3.params=
+comment3.target=java.lang.Object\ remove()
+comment3.text=\r\n\ Remove\ the\ value\ at\ the\ front\ of\ the\ list\r\n\ Pre\:queue\ is\ not\ empty\r\n
+comment4.params=
+comment4.target=boolean\ isEmpty()
+comment4.text=\r\n\ @return\ true\ if\ queue\ is\ empty\r\n
+comment5.params=
+comment5.target=void\ clear()
+comment5.text=\r\n\ clear\ the\ queue\r\n
+numComments=6

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=ArrayListIterator
+comment0.text=\r\n\ A\ ListIterator\ for\ ArrayLists\r\n\r\n\ @author\ sdb&(Eric\ Robinson)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=list
+comment1.target=ArrayListIterator(List)
+comment2.params=list\ ndx
+comment2.target=ArrayListIterator(List,\ int)
+comment3.params=
+comment3.target=boolean\ hasPrevious()
+comment4.params=
+comment4.target=java.lang.Object\ previous()
+comment5.params=
+comment5.target=void\ remove()
+comment6.params=
+comment6.target=java.lang.Object\ next()
+comment7.params=value
+comment7.target=void\ add(java.lang.Object)
+numComments=8

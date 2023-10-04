@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DriverLabEquals
+comment0.text=\r\n\ Data\ Structures\ and\ Algorithms.\r\n\r\n\ Compare\ lists\ for\ equality\r\n\ \r\n\ @author\ (sdb)\ \r\n\ @version\ (Sep\ 2020)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=list
+comment2.target=void\ init(list.List)
+comment3.params=l1\ l2
+comment3.target=void\ testEquals(list.List,\ list.List)
+numComments=4

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Lab1
+comment0.text=\r\n\ Work\ with\ lists\r\n\ \r\n\ @author\ (sdb)\r\n\ @author\ (PUT\ YOUR\ NAME\ HERE)\r\n\ @version\ (Fall\ 2020)\r\n
+comment1.params=
+comment1.target=void\ main()
+comment2.params=aList
+comment2.target=void\ deleteEvens(java.util.List)
+comment2.text=\r\n\ \ Delete\ all\ even\ numbers\ from\ the\ given\ list\r\n
+comment3.params=aList
+comment3.target=void\ init(java.util.List)
+comment4.params=aList\ max
+comment4.target=void\ show(java.util.List,\ int)
+numComments=5

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=DriverLabSetRef
+comment0.text=\r\n\ Lab\ 2\r\n\ Test\ methods\ added\ to\ the\ List\ interface\r\n\ \r\n\ @author\ (sdb)\ \r\n\ @version\ (Sep\ 2018)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ \ Test\ the\ LinkedList\ class.\ \ Obtaining\ a\ reference\ to\ a\ Node\r\n\ \ near\ the\ end\ of\ the\ list\ should\ be\ efficient.\r\n
+numComments=2

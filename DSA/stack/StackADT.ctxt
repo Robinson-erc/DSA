@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=StackADT
+comment0.text=\r\nA\ LIFO\ list\r\n\r\n\ @author\ SDB&(Eric\ Robinson)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=value
+comment1.target=java.lang.Object\ push(java.lang.Object)
+comment1.text=\r\nPush\ a\ given\ value\ on\ top\ of\ this\ stack\ \r\n@return\ value\ pushed\r\n
+comment2.params=
+comment2.target=java.lang.Object\ peek()
+comment2.text=\r\n\ @return\ the\ top\ value\ from\ this\ stackADT\r\n\ Pre\:\ this\ stack\ must\ not\ be\ empty\r\n
+comment3.params=
+comment3.target=java.lang.Object\ pop()
+comment3.text=\r\n\ Remove\ the\ top\ value\ from\ the\ stack\r\n\ @return\ the\ value\ removed\r\n\ Pre\:\ the\ stack\ must\ not\ be\ empty\r\n
+comment4.params=
+comment4.target=boolean\ isEmpty()
+comment4.text=@return\ true\ iff\ this\ Queue\ is\ empty
+comment5.params=
+comment5.target=void\ clear()
+comment5.text=\r\n\ Clear\ Stack\r\n
+numComments=6
