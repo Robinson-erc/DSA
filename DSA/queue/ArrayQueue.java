@@ -54,27 +54,6 @@ public class ArrayQueue<E> implements QueueADT<E>
         size=0;
 
     }
-
-    //public String toString() {
-      //  StringBuilder result= new StringBuilder("[");
-        //int f=front;
-        //int b=back;
-        //if(list.isEmpty()){
-        //return "[]";
-        //}
-        //result.append(list.get(front).toString());
-        //for(int i=0;i<size;i++){
-          //  result.append(", ").append(list.get(f));
-            //f=(f+1)%list.size();
-            //b=(b+1)%list.size();
-        //}
-         //for(int i=(front+1)%list.size();i != back; i= (i+1)%list.size()){
-         //result.append(", ").append(list.get(i));
-
-         //}
-        //return result + "]";
-       
-    //}
     @Override
     public String toString() {
         if(size == 0) {
@@ -82,10 +61,6 @@ public class ArrayQueue<E> implements QueueADT<E>
         }
         String result = "["+ list.get(front%list.size()).toString();
         for(int i = 1; i <size; i++) {
-            //front=(front+i)% list.size();
-            //back=(back+1)% list.size();
-            //list.get(front+i);
-
             result = result + ", " + list.get((front+i)%list.size());
         }
         result = result + "]";
