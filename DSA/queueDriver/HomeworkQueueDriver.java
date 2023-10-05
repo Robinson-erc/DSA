@@ -14,8 +14,8 @@ public class HomeworkQueueDriver
     {
         QueueADT <String> lunch = new Queue <String> ();
     
-        //System.out.println ("Testing Queue");
-        //testQueue (lunch);
+        System.out.println ("Testing Queue");
+       testQueue (lunch);
         System.out.println ("\nTesting ArrayQueue");
         lunch = new ArrayQueue <String>();
         testQueue (lunch);

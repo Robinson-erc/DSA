@@ -17,17 +17,16 @@ public class ArrayQueue<E> implements QueueADT<E>
         if(list.size()!=size)//clobber
         {
             list.set(back,value);
-           // back=(back+1)%list.size();
+           back=(back+1)%list.size();
 
         }
         else{
             list.add(back,value);
-            size++;
             front=(front+1)%list.size();
-            back=(back+1)%list.size();
+           back=(back+1)%list.size();
 
         }
-        //size++;
+        size++;
     }
 
     public E peek(){
@@ -50,26 +49,46 @@ public class ArrayQueue<E> implements QueueADT<E>
 
     public void clear(){
         list.clear();
+        front=0;
+        back=0;
+        size=0;
+
     }
 
-    public String toString() {
-        StringBuilder result= new StringBuilder("[");
-        int f=front;
+    //public String toString() {
+      //  StringBuilder result= new StringBuilder("[");
+        //int f=front;
         //int b=back;
-        if(list.isEmpty()){
-        return "[]";
-        }
-        result.append(list.get(front).toString());
-        for(int i=0;i<size;i++){
-            result.append(", ").append(list.get(f));
-            f=(f+1)%list.size();
+        //if(list.isEmpty()){
+        //return "[]";
+        //}
+        //result.append(list.get(front).toString());
+        //for(int i=0;i<size;i++){
+          //  result.append(", ").append(list.get(f));
+            //f=(f+1)%list.size();
             //b=(b+1)%list.size();
-        }
-        // for(int i=(front+1)%list.size();i != back; i= (i+1)%list.size()){
-        // result += ", " + list.get(i);
+        //}
+         //for(int i=(front+1)%list.size();i != back; i= (i+1)%list.size()){
+         //result.append(", ").append(list.get(i));
 
-        // }
-        return result + "]";
+         //}
+        //return result + "]";
        
+    //}
+    @Override
+    public String toString() {
+        if(size == 0) {
+            return "[]";
+        }
+        String result = "["+ list.get(front%list.size()).toString();
+        for(int i = 1; i <size; i++) {
+            //front=(front+i)% list.size();
+            //back=(back+1)% list.size();
+            //list.get(front+i);
+
+            result = result + ", " + list.get((front+i)%list.size());
+        }
+        result = result + "]";
+        return result;
     }
 }
