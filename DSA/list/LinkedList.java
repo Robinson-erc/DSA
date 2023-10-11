@@ -9,7 +9,7 @@ package list;
 public class LinkedList<E> implements List<E>
 {
 
-    int size;
+    int size=0;
     Node<E> head=new Node<E>(null,null,null);
     Node<E> tail=new Node<E>(null,null,head);
     private Node<E> ref;
@@ -17,7 +17,7 @@ public class LinkedList<E> implements List<E>
     public LinkedList()
     {
         head.next=tail;
-    }   
+    }
 
     public E get(int ndx)
     {
@@ -28,17 +28,17 @@ public class LinkedList<E> implements List<E>
 
     private void setRef(int ndx)
     {
-       if(ndx<0 || ndx>size){
-           throw new IndexOutOfBoundsException("index is out of bounds "+ndx);
-           
-       }
-       if(ndx<=size/2){
-           //starting from head moving forward
-           ref=head.next;
-           for(int i=0;i<ndx;i++){
-               ref=ref.next;
-           }
-       
+        if(ndx<0 || ndx>size){
+            throw new IndexOutOfBoundsException("index is out of bounds "+ndx);
+
+        }
+        if(ndx<=size/2){
+            //starting from head moving forward
+            ref=head.next;
+            for(int i=0;i<ndx;i++){
+                ref=ref.next;
+            }
+
         }
         else{
             ref=tail.prev;
@@ -189,6 +189,12 @@ public class LinkedList<E> implements List<E>
 
     public ListIterator<E> listIterator(int start){
         return new RefListIterator<E>(this,start);
+    }
+    public void addAll(List<E> other){
+        Iterator<E> itty = other.iterator();
+        while(itty.hasNext()){
+            add(itty.next());
+        }
     }
 
 }

@@ -10,7 +10,7 @@ public interface List<E>
     /**
      * @ return the value at given ndx
      * @ param 0 <= ndx < size
-     */ 
+     */
     E get(int ndx);
 
     /**
@@ -65,7 +65,7 @@ public interface List<E>
     boolean firstIsDuplicated();
 
     /** Remove the first occurrence of obj from this List, if possible.
-    @return true iff the object was removed
+     @return true iff the object was removed
      */
     boolean remove (Object obj);
 
@@ -79,4 +79,6 @@ public interface List<E>
      * @return a ListIterator for this list beginning at the given ndx use size to begin at end
      */
     ListIterator<E> listIterator(int ndx);
+    /** Add all values from the other List to this List */
+    void addAll (List <E> other);
 }

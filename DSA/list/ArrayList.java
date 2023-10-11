@@ -8,7 +8,7 @@ package list;
  */
 public class ArrayList<E> implements List<E>
 {
-    int size;
+    int size =0;
     E[] values;
     //constructors
     public ArrayList(int cap)
@@ -70,7 +70,7 @@ public class ArrayList<E> implements List<E>
         return result;
     }
 
-    public void clear() 
+    public void clear()
     {
         // Remove all elements from the list
         for (int i = 0; i < size; i++) {
@@ -145,7 +145,7 @@ public class ArrayList<E> implements List<E>
     }
 
     public boolean firstIsDuplicated(){
-        
+
         for(int i=0; i<size; i++){
             if(values[0] != values[i+1]){
                 return false;
@@ -154,55 +154,61 @@ public class ArrayList<E> implements List<E>
                 return true;
             }
         }
-       
+
         return false;
     }
     public boolean remove(Object obj){
         Iterator<E> iterator = iterator();
-        
+
         while(iterator.hasNext()){
-           E temp= iterator.next();
-           if(temp.equals(obj)){
-               iterator.remove();
-               return true;
-           }
+            E temp= iterator.next();
+            if(temp.equals(obj)){
+                iterator.remove();
+                return true;
+            }
         }
-        
+
         return false;
     }
     public boolean equals(Object obj){
-      if(this == obj){
-          return true;
-      }
-      if(obj==null || !(obj instanceof List<?>)){
-          return false;
-      }
-      
-      List<?> otherList = (List<?>) obj;
-      
-      if (size() !=otherList.size())
-      {
-          return false;
-      }
-      Iterator<E> thisIterator =iterator();
-      Iterator<?> otherIterator= otherList.iterator();
-      
-      while(thisIterator.hasNext() && otherIterator.hasNext()){
-          E thisElement = thisIterator.next();
-          Object otherElement= otherIterator.next();
-          if(!thisElement.equals(otherElement)){
-              return false;
-          }
-          
-      }
-      
-      return true;
+        if(this == obj){
+            return true;
+        }
+        if(obj==null || !(obj instanceof List<?>)){
+            return false;
+        }
+
+        List<?> otherList = (List<?>) obj;
+
+        if (size() !=otherList.size())
+        {
+            return false;
+        }
+        Iterator<E> thisIterator =iterator();
+        Iterator<?> otherIterator= otherList.iterator();
+
+        while(thisIterator.hasNext() && otherIterator.hasNext()){
+            E thisElement = thisIterator.next();
+            Object otherElement= otherIterator.next();
+            if(!thisElement.equals(otherElement)){
+                return false;
+            }
+
+        }
+
+        return true;
     }
     public ListIterator<E> listIterator(){
         return new ArrayListIterator<E>(this);
     }
     public ListIterator<E> listIterator(int ndx){
         return new ArrayListIterator<E>(this,ndx);
+    }
+    public void addAll(List<E> other){
+        Iterator<E> itty = other.iterator();
+        while(itty.hasNext()){
+            add(itty.next());
+        }
     }
 
 }

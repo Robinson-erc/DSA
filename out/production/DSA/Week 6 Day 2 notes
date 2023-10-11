@@ -1,0 +1,83 @@
+-Algorithm
+    -A well defined sequence of steps which will solve a given problem.
+    -An algorithm must terminate with a correct solution.
+    -We say that the run time for an algorithm is O(f(n)) if the time to run is proportional
+     to f(n) as n gets large. N represents the size of the input.
+    -If x is proportional to y, then there is a constant k, such that x=k*y
+
+    void m1(int n){
+     for(i=0; i<n; i++){        //run time for this method is O(n)
+        prt(i);
+     }
+    }
+
+    void m2(int m){
+      for(i=0; i<m; i++){
+       prt(i)                       //run time for this method O(n)
+                                    //n represents the size of the input in this case m
+      }
+    }
+
+    void m3(int n){
+        for(int i=0; i<100000; i++){
+            prt(i);                     //represents constant time O(1)(constant time)
+
+        }
+    }
+
+    void m4(int n){
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                prt(i+j);                   //a nested loop with the run time O(n^2)
+            }
+        }
+    }
+
+    void m4(int n){
+        for(int i=0; i<n; i++){
+            m2(n);                         //hidden loop with run time of O(n^2)
+        }
+    }
+
+    void m5(int n){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){       //run time of O(n*(n+1))=O(n^2+n)=O(n^2)
+                prt(i+j);
+            }
+        }
+    }
+    void m6(int n){
+        for(int i=0;i<n;i++)
+            for(int j=0;j<n;j++)
+                for(int k=0;k<n;k++)        //run time of O(n^3)
+                    prt(i+j+k)
+    }
+
+    void m7((int n)
+    {
+        for(int i=0;i<n;i++)
+            prt(i);                     //run time of O(2n)=O(n). for statements are not nested
+        for(int j=0;j<n;j++)
+            prt(j);
+    }
+
+    void m8(List<E> list){
+        for(int i=0; i<list.size();i++)         //run time of O(n^2) due to hidden loop in get
+        {
+            prt(list.get(i));
+        }
+    }
+
+    void m9(int n){             //suppose n=16. 16 8 4 2 1
+        while(n>0){             //Double the input => only 1 more iteration
+            prt(n);             //O(log2(n))= O(log(n))
+            n=n/2;
+        }
+    }
+
+    - 2^log(n) = n
+    - log(2^n) = n
+
+    -O(1) < O(log(n)) < O(n) < O(n*log(n)) < O(n^2) < O(n^3) < O(n^4).......< O(2^n)
+
+    -if we cannot find a solution to a problem faster than O(2^n) we say the problem is hard.
