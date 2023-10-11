@@ -13,7 +13,7 @@ public class RecursionDriver {
         System.out.println("Fibonacci number at position 6: " + fibonacciResult);
 
         // Test the pal method
-        String palindromeString = "racecar";
+        String palindromeString = "tacocat";
         boolean isPalindrome = recursion.pal(palindromeString);
         System.out.println("'" + palindromeString + "' is a palindrome: " + isPalindrome);
 
@@ -24,6 +24,12 @@ public class RecursionDriver {
         // Test the power method
         int powerResult = recursion.power(2, 3);
         System.out.println("2^3 = " + powerResult);
+
+        //testing fib again
+        int fibTest = recursion.fib(33);
+        System.out.println(fibTest);
+
+
     }
 
 }
