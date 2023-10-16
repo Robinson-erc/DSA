@@ -1,0 +1,20 @@
+-Sorting Algorithms
+    -Given a list, arrange the values in increasing (or decreasing) order.
+
+    -Selection Sort Algorithm
+        -find the position of the smallest value, beginning at the start
+            -Swap it with the start position.
+
+            []      []       []      []       []
+            smallest ^smallest             largest
+    -x.compareTo(y)
+        -returns negative if x is less than y
+        -returns positive number if x is greater than y
+        -returns x-y
+        -so if x-y = 0 x equals y
+    -Bubble Sort
+        -Compare neighbors
+        -Swap if necessary
+        -Scanning list from start to end largest value is in correct spot
+        -Repeat but don't look at the value at the end
+        -Repeat . . . . . values at end
