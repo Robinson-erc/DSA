@@ -5,6 +5,7 @@ package list;
  *permitted
  *@author Eric Robinson
  */
+
 public interface List<E>
 {
     /**
