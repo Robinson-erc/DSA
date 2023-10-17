@@ -32,4 +32,5 @@ public class SelectionSort<E extends Comparable> implements Sorter<E> {
         list.set(x, list.get(y));
         list.set(y, temp);
     }
+
 }
