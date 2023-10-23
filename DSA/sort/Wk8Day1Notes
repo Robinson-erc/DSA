@@ -1,0 +1,20 @@
+-Quick Sort Algorithms
+    -is the size < 2?
+        -if so terminate
+    -partition the list:
+        -choose any value as Pivot
+        -Arrange so that all values to the left of the pivot are strictly smaller
+        and all values to the right of the pivot are greater than or equal to the pivot.
+      [][][][][][][][][][][][][][][][][][][][][][]
+                           |
+     <pivot                |                  >=pivot
+                    p=position of pivot
+
+    -use quicksort to sort the left part
+    -use quicksort to sort the right part
+    -Choose a value as the pivot
+    -Make a copy of the picot in a local variable
+    -set up a loop to scan the remaining values,
+    moving them to the left of the pivot if they are smaller
+    than the pivot.
+    -
