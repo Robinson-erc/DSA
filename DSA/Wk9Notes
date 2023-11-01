@@ -1,0 +1,4 @@
+-A binary tree has a value, and at most two children each of which is a binary tree
+    -beginning of tree is called root
+    -entries without children are called leaves
+    -
