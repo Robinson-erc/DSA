@@ -26,7 +26,7 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
 
     @Override
     public void setValue(E value) {
-
+        this.value = value;
     }
 
     @Override
@@ -103,9 +103,12 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
            return this.value;
         }
         if(cmp<0){
-            return right.getvalue();
+            return right.get(value);
         }
-        return left.getvalue();
+        else{
+            return left.get(value);
+        }
+        //return left.getvalue();
     }
 
     @Override
