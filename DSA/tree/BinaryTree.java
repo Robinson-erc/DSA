@@ -11,7 +11,7 @@ public interface BinaryTree<E> {
      * @return the value of this BT
      * or null if it has no value
      */
-    E getvalue();
+    E getValue();
     /**
      * search the family of this BT for the given value
      * @return the value of null if not found

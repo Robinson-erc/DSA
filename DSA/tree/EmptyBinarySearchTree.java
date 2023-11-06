@@ -7,7 +7,7 @@ public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E
 {
 
     @Override
-    public E getvalue() {
+    public E getValue() {
         return null;
     }
 

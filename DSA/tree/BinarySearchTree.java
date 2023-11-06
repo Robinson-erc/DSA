@@ -30,7 +30,7 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
     }
 
     @Override
-    public E getvalue() {
+    public E getValue() {
         return value;
     }
     public BinaryTree<E> remove(Object obj)
@@ -81,7 +81,7 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
         while ( !result.getLeft().isEmpty() );{
             result=result.getLeft();
         }
-        return result.getvalue();
+        return result.getValue();
     }
 
     private List<BinaryTree<E>> children(){
@@ -105,9 +105,9 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
         if(cmp<0){
             return right.get(value);
         }
-        else{
+
             return left.get(value);
-        }
+
         //return left.getvalue();
     }
 
