@@ -1,5 +1,7 @@
 package tree;
 
+import list.Iterator;
+
 /**
  * A BT(binary tree) has a value
  * and at most two children
@@ -57,5 +59,9 @@ public interface BinaryTree<E> {
     /** Set the value of this BinaryTree to the given value */
     void setValue(E value);
 
+    /**
+     * return an iterator for this BinaryTree
+     */
+    Iterator<E> iterator();
 
 }

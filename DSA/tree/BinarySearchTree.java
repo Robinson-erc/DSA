@@ -30,6 +30,11 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
     }
 
     @Override
+    public Iterator<E> iterator() {
+        return new TreeIterator<E>(this);
+    }
+
+    @Override
     public E getValue() {
         return value;
     }
@@ -54,10 +59,10 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
             if (kids.isEmpty()){
                 return new EmptyBinarySearchTree<E>();
             }
-            if(kids.size() == 1){
+            else if(kids.size() == 1){
                 return kids.get(0);
             }
-            else {
+            else if(kids.size() == 2){
                 E successor = getSuccessor();
                 removeHelper(successor);
                 this.value = successor;
@@ -72,6 +77,7 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
         }
 
         if (removed) size --;
+
         return this;
 
     }
@@ -137,8 +143,8 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
     }
     private BinaryTree<E> addHelper(E value){
         int cmp =this.value.compareTo(value);
-        if(cmp<0) left = left.add(value);
-        if(cmp>0) right = right.add(value);
+        if(cmp<0) right = right.add(value);
+        if(cmp>0) left = left.add(value);
         if (added) size++;
         return this;
     }

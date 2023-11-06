@@ -49,7 +49,7 @@ public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return true;
     }
 
     @Override
@@ -64,6 +64,12 @@ public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E
 
     @Override
     public void setValue(E value) {
+
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new TreeIterator<E>(this);
 
     }
 }

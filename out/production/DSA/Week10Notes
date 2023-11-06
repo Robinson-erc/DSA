@@ -1,0 +1,32 @@
+Binary traversal
+    -visting every value in the family of BT
+    -Three algorithms
+    -Pre order traversal
+        -visit the root
+        -visit the family of left with pre order traversal
+        -visit the family of the right child, with pre order traversal.
+
+            -cat cat bat dog fox rat possum quail snake
+
+                            mouse
+                           /     \
+                         cat      \
+                        /   \      rat
+                      bat   dog    /   \
+                             \  possum  snake
+                             fox    \
+                                   quail
+
+    -In order traversal
+        -visit familt of the left child
+        -visit root
+        -visit family of right child
+
+        bat  cat dog fox mouse possum quail rat snake
+
+    -Post order traversal
+        -Visit family of the left child
+        -visit the family of the right child
+        -Visit the root
+
+       bat fox dog cat quail possum snake rat mouse
