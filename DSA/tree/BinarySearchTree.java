@@ -65,14 +65,14 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
             else if(kids.size() == 2){
                 E successor = getSuccessor();
                 removeHelper(successor);
-                this.value = successor;
+                value = successor;
                 return  this;
             }
         }
-        if(cmp<0){
+       else if(cmp<0){
             right = right.remove(key);
         }
-        if(cmp > 0){
+       else if(cmp > 0){
             left = left.remove(key);
         }
 

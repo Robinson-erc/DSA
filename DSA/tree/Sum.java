@@ -28,7 +28,11 @@ public class Sum extends Expr {
         if (right instanceof Constant && right.eval()==0) return left;
         return this;
     }
-    public String toString(){
-        return "("+ left + "+" + right + ")" ;
+
+    @Override
+    public String toString() {
+        return "(" + left + "+ " + right+")";
     }
+
+
 }
