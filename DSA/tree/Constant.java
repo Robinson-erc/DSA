@@ -26,6 +26,6 @@ public class Constant extends Expr{
     }
 
     public String toString(){
-        return value + " ";
+        return value + "";
     }
 }

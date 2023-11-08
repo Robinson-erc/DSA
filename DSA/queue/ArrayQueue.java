@@ -40,6 +40,7 @@ public class ArrayQueue<E> implements QueueADT<E>
         E result=list.get(front);
         front=(front+1)%list.size();
         size--;
+
         return result;
     }
 

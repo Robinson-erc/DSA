@@ -31,7 +31,7 @@ public class Sum extends Expr {
 
     @Override
     public String toString() {
-        return "(" + left + "+ " + right+")";
+        return "(" + left + "+" + right+")";
     }
 
 

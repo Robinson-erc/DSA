@@ -22,10 +22,20 @@ public class Mod extends Expr {
     public Expr simplify() {
         left = left.simplify();
         right = right.simplify();
-        if (left instanceof Constant && left.eval() == 0) return new Constant(0);
-        if (right instanceof Constant && right.eval() == 0) return left;
+        if (left instanceof Constant && right instanceof Constant) {
+            if (right.eval() != 0) {
+                int remainder = eval();
+                return new Constant(remainder);
+            }
+            if (right.eval() == 0){
+                System.err.println("cannot have zero as right operand!");
+                return null;
+            }
+        }
         return this;
     }
+
+
 
 
     @Override

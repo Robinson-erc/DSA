@@ -1,182 +1,219 @@
 package tree;
 import list.*;
+
 /**
- * A BT whose value is smaller than all values in
- * the right child's family, and larger than all
- * values in it left child's family, and
- * each child is a  binary search tree. No duplicates
- * @param <E>
- * @author sdb & Eric Robinson
+ * A BinaryTree in which the value is
+ * strictly smaller than all values in
+ * the right child's family and strictly
+ * larger than the left child's family.
+ * Both children are either empty or binary search trees.
+ *
+ * @author Eric robinson
+ * @version
  */
-public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
+public class BinarySearchTree<E extends Comparable> implements BinaryTree<E>
+{
     E value;
-    public static boolean added;
-    public boolean removed;
     BinaryTree<E> left = new EmptyBinarySearchTree<E>();
     BinaryTree<E> right = new EmptyBinarySearchTree<E>();
-    int size = 1; //family of this BST
+    int size = 1;
+    static boolean added, removed;
 
 
-    public BinarySearchTree(E value) {
-        this.value = value;
-    }
-    public int size(){
-        return this.size;
-    }
-
-    @Override
-    public void setValue(E value) {
-        this.value = value;
-    }
-
-    @Override
-    public Iterator<E> iterator() {
-        return new TreeIterator<E>(this);
-    }
-
-    @Override
-    public E getValue() {
-        return value;
-    }
-    public BinaryTree<E> remove(Object obj)
+    public BinarySearchTree(E value)
     {
-        try{
-            E key = (E)obj;
-            return removeHelper(key);
-        }
-        catch (Exception cce)
-        {
-            return this;
-        }
-    }
-    private BinaryTree<E> removeHelper(E key){
-        int cmp = this.value.compareTo(key);
-        if ( cmp == 0)
-        {
-            removed=true;
-            List<BinaryTree<E>> kids = children();
-
-            if (kids.isEmpty()){
-                return new EmptyBinarySearchTree<E>();
-            }
-            else if(kids.size() == 1){
-                return kids.get(0);
-            }
-            else if(kids.size() == 2){
-                E successor = getSuccessor();
-                removeHelper(successor);
-                value = successor;
-                return  this;
-            }
-        }
-       else if(cmp<0){
-            right = right.remove(key);
-        }
-       else if(cmp > 0){
-            left = left.remove(key);
-        }
-
-        if (removed) size --;
-
-        return this;
-
+        this.value = value;
     }
 
-    private E getSuccessor() {
-        BinaryTree<E> result = right;
-        while ( !result.getLeft().isEmpty() );{
-            result=result.getLeft();
-        }
-        return result.getValue();
+    public E getValue()
+    {
+        return this.value;
     }
 
-    private List<BinaryTree<E>> children(){
-        List<BinaryTree<E>> childrenList = new ArrayList<>();
-
-        if (!left.isEmpty()) {
-            childrenList.add(left);
-        }
-        if (!right.isEmpty()) {
-            childrenList.add(right);
-        }
-
-        return childrenList;
-    }
-    @Override
-    public E get(E value) {
+    public E get(E value)
+    {
         int cmp = this.value.compareTo(value);
-        if(cmp==0){
-           return this.value;
+        if ( cmp == 0 )
+        {
+            return this.value;
         }
-        if(cmp<0){
+
+        if ( cmp < 0 )
+        {
             return right.get(value);
         }
 
+        else
+        {
             return left.get(value);
-
-        //return left.getvalue();
+        }
     }
 
-    @Override
-    public boolean containsKey(Object obj) {
-        try {
+    public boolean containsKey(Object obj)
+    {
+        try
+        {
             E key = (E) obj;
-
             int cmp = this.value.compareTo(key);
-            if (cmp == 0) {
+
+            if ( cmp == 0 )
+            {
                 return true;
             }
-            if (cmp < 0) {
+
+            if ( cmp < 0 )
+            {
                 return right.containsKey(key);
             }
-            return left.containsKey(key);
-        } catch (ClassCastException cce){
+            else
+            {
+                return left.containsKey(key);
+            }
+        }
+        catch ( Exception cce)
+        {
             return false;
         }
     }
 
+    public void setLeft(BinaryTree<E> left)
+    {
+        this.left = left;
+        size = left.size() + right.size() + 1;
+    }
 
-    @Override
-    public BinaryTree<E> add(E value) {
-         added = false;
+    public void setRight(BinaryTree<E> right)
+    {
+        this.right = right;
+        size = left.size() + right.size() + 1;
+    }
+
+    public BinaryTree<E> add(E value)
+    {
+        added = false;
         return addHelper(value);
     }
-    private BinaryTree<E> addHelper(E value){
-        int cmp =this.value.compareTo(value);
-        if(cmp<0) right = right.add(value);
-        if(cmp>0) left = left.add(value);
-        if (added) size++;
+
+    private BinaryTree<E> addHelper(E value)
+    {
+        int cmp = this.value.compareTo(value);
+
+        if ( cmp < 0 )
+        {
+            right = right.add(value);
+        }
+
+        if ( cmp > 0 )
+        {
+            left = left.add(value);
+        }
+
+        if ( added ) size++;
+
         return this;
     }
 
-    @Override
-    public void setLeft(BinaryTree<E> left) {
-        this.left=left;
-        size= left.size()+right.size()+1;
-
-    }
-
-    @Override
-    public BinaryTree<E> getLeft() {
+    public BinaryTree<E> getLeft()
+    {
         return left;
     }
 
-    @Override
-    public BinaryTree<E> getRight() {
+    public BinaryTree<E> getRight()
+    {
         return right;
     }
 
-    @Override
-    public boolean isEmpty() {
+    public int size()
+    {
+        return size;
+    }
+
+    public boolean isEmpty()
+    {
         return false;
     }
 
-    @Override
-    public void setRight(BinaryTree<E> right) {
-        this.right=right;
-        size= left.size()+right.size()+1;
+    public void setValue(E value)
+    {
+        this.value = value;
     }
 
+    public BinaryTree<E> remove(Object obj)
+    {
+        removed = false;
+        try
+        {
+            E key = (E)obj;
+            return removeHelper(key);
+        }
+        catch ( Exception cce )
+        {
+            return this;
+        }
+    }
 
+    private BinaryTree<E> removeHelper(E key)
+    {
+        int cmp = this.value.compareTo(key);
+        if ( cmp == 0 )
+        {
+            removed = true;
+            List<BinaryTree<E>> kids = children();
+            if ( kids.isEmpty() )
+            {
+                return new EmptyBinarySearchTree<E>();
+            }
+            if ( kids.size() == 1 )
+            {
+                return kids.get(0);
+            }
+            else
+            {
+                E successor = getSuccessor();
+                removeHelper(successor);
+                this.value = successor;
+                return this;
+            }
+        }
+        if ( cmp < 0 )
+        {
+            right = right.remove(key);
+        }
+        if ( cmp > 0 )
+        {
+            left = left.remove(key);
+        }
+        if ( removed ) size--;
+        return this;
+    }
 
+    private List<BinaryTree<E>> children()
+    {
+        List<BinaryTree<E>> result = new ArrayList<BinaryTree<E>>();
+        if ( !left.isEmpty() )
+        {
+            result.add(left);
+        }
+        if ( !right.isEmpty() )
+        {
+            result.add(right);
+        }
+        return result;
+    }
+
+    private E getSuccessor()
+    {
+        BinaryTree<E> result = right;
+        while ( !result.getLeft().isEmpty() )
+        {
+            result = result.getLeft();
+        }
+        return result.getValue();
+    }
+
+    public Iterator<E> iterator()
+    {
+        return new TreeIterator<E>(this);
+    }
 }
+

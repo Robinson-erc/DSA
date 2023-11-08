@@ -1,5 +1,7 @@
 package tree;
 
+
+
 public class Quotient extends Expr {
     public Quotient(Expr left, Expr right) {
         super.left = left;
@@ -23,9 +25,13 @@ public class Quotient extends Expr {
         left = left.simplify();
         right = right.simplify();
         if (left instanceof Constant && left.eval() == 0) return new Constant(0);
-        if (right instanceof Constant && right.eval() == 0) return new Constant(0);
-        //if (left instanceof Constant && left.eval()==1) return right;
-        if (right instanceof Constant && right.eval()==1) return left;
+        if (right instanceof Constant && right.eval() == 0) {
+            System.err.println("No division by zero!");
+            return null;
+        }
+        if (left.eval()==right.eval()){
+            return new Constant(1);
+        }
         return this;
     }
 
