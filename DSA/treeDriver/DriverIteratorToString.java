@@ -44,6 +44,7 @@ public class DriverIteratorToString
             if (current < 0)
             {
                 nums = nums.remove(current);
+                iterator = nums.iterator(); // Reset the iterator after removal
             }
         }
         
