@@ -1,0 +1,29 @@
+Put up your green card when finished with each problem.
+
+1.  (a) Include a toString() method in your BinaryTree interface:
+
+/** @return this BinaryTree as a String, showing the values with an in-order traversal */
+String toString();
+Implement this method in both classes which implement the BinaryTree interface.
+
+Hint: Use an Iterator.
+
+(b) Download the Driver DriverIteratorToString Download DriverIteratorToString, and put it in your treeDriver package.  Complete the method removeNegs(BinaryTree<Integer>) which is supposed to remove all negative numbers from the given BinaryTree.
+
+
+
+2   (a)  Complete the definitions of the Difference, Quotient, and Mod classes for Expression Trees.
+
+Hint:  At this point you should not be using the eval() method to simplify an Expr.  But you can use the equals(Object) method to determine whether two Exprs are equal.
+
+   (b)  Define a class named Variable in your tree package.  Every Variable is an Expression, and every Variable has a name (which is a single character).  Two Variables are equal if they have the same name.  At this point, a Variable has no value, so an attempt to eval a Variable should result in an IllegalArgumentException.  Test with LabExprDriver Download LabExprDriver.
+
+
+
+3.  Assignment in Java is an operator, which has a side effect and produces a result.  The side effect is that it changes the value of the variable.  The result is the value assigned.  For example,  if a,b,c are all ints, consider the following statement:
+
+              c = (a=2) + (b=3);
+
+          After this statement has been executed, the value of a is 2, the value of b is 3, and the value of c is 5.
+
+          Define a class named Assign which represents the assignment operator.  Change your Variable class so that a Variable can store a value.  An attempt to eval a Variable will be ok, but only if it has been assigned a value by the Assign operator (the assignment of a value to a variable occurs when the Assign is evaluated).  Uncomment the appropriate lines of the Driver and test.  (This should not affect the simplify methods in the other classes)
