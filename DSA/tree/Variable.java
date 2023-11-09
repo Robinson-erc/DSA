@@ -22,4 +22,8 @@ public class Variable extends Expr {
     public Expr simplify() {
         return this;
     }
+
+    public String toString(){
+        return Character.toString(name);
+    }
 }

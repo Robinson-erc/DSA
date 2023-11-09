@@ -20,10 +20,11 @@ public class Difference extends Expr {
 
     @Override
     public Expr simplify() {
+        String neg = "-";
         left = left.simplify();
         right = right.simplify();
-        if (left instanceof Constant && left.eval() == 0) return new Constant(-right.eval());
-        if (right instanceof Constant && right.eval() == 0) return left;
+        if (left instanceof Constant && left.equals(0)) return right;
+        if (right instanceof Constant && right.equals(0)) return left;
         return this;
     }
 

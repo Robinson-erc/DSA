@@ -24,19 +24,22 @@ public class Quotient extends Expr {
     public Expr simplify() {
         left = left.simplify();
         right = right.simplify();
-        if (left instanceof Constant && right instanceof Constant) {
-            if (right.eval() != 0) {
-                return new Constant(eval());
-            } else {
+
+            if (right instanceof Constant && right.equals(0)){
                 System.err.println("Cannot have zero as the right operand!");
-                return null;
             }
-        }
-        if (left.eval() == right.eval()) {
-            return new Constant(1);
-        }
+            if (left instanceof Constant && left.equals(new Constant(0))){
+                return new Constant(0);
+            }
+            if(left.equals(right)) {
+                return new Constant(1);
+            }
+
         return this;
-    }
+        }
+
+
+
 
 
 

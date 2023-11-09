@@ -18,7 +18,9 @@ public class HomeworkTestExpr
       System.out.println ("It simplifies to " + e1.simplify());       // 1
       
       e1 = new Difference (new Constant(3), new Constant(5));       //  3 - 5
+      System.out.println(e1+" simplifies to "+ e1.simplify());
       e2 = new Difference (new Constant(5), new Constant (3));      //  5 - 3
+      System.out.println(e2+" simplifies to "+ e2.simplify());
       if (e1.equals (e2))
         System.err.println ("Not correct: equals in Difference ");
 
