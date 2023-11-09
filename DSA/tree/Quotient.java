@@ -24,16 +24,20 @@ public class Quotient extends Expr {
     public Expr simplify() {
         left = left.simplify();
         right = right.simplify();
-        if (left instanceof Constant && left.eval() == 0) return new Constant(0);
-        if (right instanceof Constant && right.eval() == 0) {
-            System.err.println("No division by zero!");
-            return null;
+        if (left instanceof Constant && right instanceof Constant) {
+            if (right.eval() != 0) {
+                return new Constant(eval());
+            } else {
+                System.err.println("Cannot have zero as the right operand!");
+                return null;
+            }
         }
-        if (left.eval()==right.eval()){
+        if (left.eval() == right.eval()) {
             return new Constant(1);
         }
         return this;
     }
+
 
 
     @Override

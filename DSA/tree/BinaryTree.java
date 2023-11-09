@@ -63,5 +63,7 @@ public interface BinaryTree<E> {
      * return an iterator for this BinaryTree
      */
     Iterator<E> iterator();
+    /** @return this BinaryTree as a String, showing the values with an in-order traversal */
+    String toString();
 
 }

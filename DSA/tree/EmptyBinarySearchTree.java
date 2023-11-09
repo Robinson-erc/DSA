@@ -72,4 +72,7 @@ public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E
         return new TreeIterator<E>(this);
 
     }
+    public String toString(){
+        return "[]";
+    }
 }
