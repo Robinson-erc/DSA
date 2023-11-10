@@ -22,7 +22,11 @@ public class Difference extends Expr {
     public Expr simplify() {
         left = left.simplify();
         right = right.simplify();
-        if (left instanceof Constant && left.equals(new Constant(0))) return right;
+        if (left instanceof Constant && left.equals(new Constant(0))){
+            Expr e1 =new Product(new Constant(-1),right);
+           return e1.simplify();
+            //return e1;
+        }
         if (right instanceof Constant && right.equals(new Constant(0))) return left;
         if (left.equals(right)) return  new Constant(0);
         return this;

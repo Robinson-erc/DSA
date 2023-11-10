@@ -26,9 +26,16 @@ public class Product extends Expr{
         if (right instanceof Constant && right.equals(new Constant(0))) return new Constant(0);
         if (left instanceof Constant && left.equals(new Constant(1))) return right;
         if (right instanceof Constant && right.equals(new Constant(1))) return left;
+       // if (left instanceof Constant && left.equals(new Constant(-1))){
+            //NegHelper();
+        //}
         return this;
-
     }
+
+   // public int NegHelper(){
+      //  return eval();
+  //  }
+
     public String toString(){
         return "("+ left + "*" + right + ")" ;
     }

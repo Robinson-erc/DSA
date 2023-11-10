@@ -38,6 +38,9 @@ public class HomeworkTestExpr
       
       e1 = new Product (e2, one);                   //  (5-3) * 1
       System.out.println (e1 + " simplifies to " + e1.simplify());            //  (5 - 3)
+
+      Expr e4 = new Difference(new Constant(0), new Constant(5));
+      System.out.println (e4 + " simplifies to " + e4.simplify());
     }
   
 }
