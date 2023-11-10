@@ -22,10 +22,10 @@ public class Product extends Expr{
     public Expr simplify() {
         left=left.simplify();
         right=right.simplify();
-        if (left instanceof Constant && left.equals(0)) return new Constant(0);
-        if (right instanceof Constant && right.equals(0)) return new Constant(0);
-        if (left instanceof Constant && left.equals(1)) return right;
-        if (right instanceof Constant && right.equals(1)) return left;
+        if (left instanceof Constant && left.equals(new Constant(0))) return new Constant(0);
+        if (right instanceof Constant && right.equals(new Constant(0))) return new Constant(0);
+        if (left instanceof Constant && left.equals(new Constant(1))) return right;
+        if (right instanceof Constant && right.equals(new Constant(1))) return left;
         return this;
 
     }

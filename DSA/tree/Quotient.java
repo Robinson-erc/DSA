@@ -25,7 +25,7 @@ public class Quotient extends Expr {
         left = left.simplify();
         right = right.simplify();
 
-            if (right instanceof Constant && right.equals(0)){
+            if (right instanceof Constant && right.equals(new Constant(0))){
                 System.err.println("Cannot have zero as the right operand!");
             }
             if (left instanceof Constant && left.equals(new Constant(0))){

@@ -15,7 +15,7 @@ public class Sum extends Expr {
 
     @Override
     public boolean equals(Object obj) {
-        if (! (obj instanceof Constant)) return false;
+        if (! (obj instanceof Sum)) return false;
         Sum other = (Sum) obj;
         return (left.equals(other.left)&&right.equals(other.right)|| left.equals(other.right)&&right.equals(other.left));
     }
