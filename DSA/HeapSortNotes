@@ -1,0 +1,92 @@
+-HeapSort
+    -in a list, the left child of position n, is at position 2n+1
+    -The right child is at position 2n+2
+
+    -[4,0,16,-3,2,5,8]
+
+                 4
+               /   \
+              0     16
+            /  \   /  \
+          -3    2 5    8
+
+    -A heap is a list in which each value is greater than  or equal to both children
+
+                    63
+                  /   \
+                 50     45   (This is a heap)
+               /  \    /
+             -46  20  23
+
+    -HeapSort Algorithm
+    1.make the list into a heap.
+    2.swap first and last values.
+        -decrement last
+        -percolate down the root until a heap is formed
+    3.repeat from step 2
+
+    -Heapify algorithm
+        -does the root have children? If not terminate.
+        -Heapify the left child
+        -Heapify the right child
+        -Percolate down the root
+    -Percolate down
+        1.Find position of its bigger child
+        2.Swap the root with its bigger child
+        3.The riit is now the bigger child position
+        4.find its bigger child and repeat from step 2
+        -Pre Condition: both children are heaps
+
+        [1,2,3,4,9,8,6]
+
+                         1
+                       /   \
+                      2     3
+                    /  \   /  \
+                   4    9 8    6
+
+                                            1
+                                          /   \
+                                         9     3
+                                       /  \   /  \
+                                      4    2 8    6
+                                       1
+                                     /   \
+                                    9     8
+                                  /  \   /  \
+                                 4    2 3    6
+                                       9
+                                     /   \
+                                    1     8
+                                  /  \   /  \
+                                 4    2 3    6
+
+                                      9
+                                    /   \
+                                   4     8
+                                 /  \   /  \
+                                1    2 3    6
+
+                             -swap first and last
+
+                                      6
+                                    /   \
+                                   4     8
+                                 /  \   /  \
+                                1   2 3    9
+                                      8
+                                    /   \
+                                   4     6
+                                  / \   / \
+                                 1  2  3   9
+
+
+
+
+
+
+
+
+
+
+[9,4,8,1,2,3,6] is a heap

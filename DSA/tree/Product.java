@@ -1,5 +1,7 @@
 package tree;
 
+import java.awt.event.ContainerAdapter;
+
 public class Product extends Expr{
     public Product(Expr left, Expr right){
         super.left=left;
@@ -26,15 +28,13 @@ public class Product extends Expr{
         if (right instanceof Constant && right.equals(new Constant(0))) return new Constant(0);
         if (left instanceof Constant && left.equals(new Constant(1))) return right;
         if (right instanceof Constant && right.equals(new Constant(1))) return left;
-       // if (left instanceof Constant && left.equals(new Constant(-1))){
-            //NegHelper();
+       ///if (left instanceof Constant && left.equals(new Constant(-1))){
+
         //}
         return this;
     }
 
-   // public int NegHelper(){
-      //  return eval();
-  //  }
+
 
     public String toString(){
         return "("+ left + "*" + right + ")" ;
