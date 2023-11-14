@@ -4,12 +4,12 @@ import list.*;
 /**
  * HeapSort Algorithm. List should be an ArrayList
  * @author sdb & Eric Robinson
- *
+ * run time for heapsort is O(n*log(n)+n*log(n)) = O(2*n*log(n)) = O(n*log(n))
  */
 public class HeapSort<E extends Comparable> implements Sorter<E> {
     List<E> list;
     @Override
-    public void sort(List<E> list) {
+    public void sort(List<E> list) { //run tume of O(n)
         this.list=list;
         heapify(0);
         int last= list.size()-1;
@@ -20,7 +20,7 @@ public class HeapSort<E extends Comparable> implements Sorter<E> {
         }
     }
 
-    public   void percDown (int root, int max)
+    public   void percDown (int root, int max) // run time of O(log(n))
     {
         int bc = biggerChild (root, max);
         while (2*root+1 <= max && greater (bc, root))
@@ -47,7 +47,7 @@ public class HeapSort<E extends Comparable> implements Sorter<E> {
      *Make this list a heap
      * @param
      */
-    private void heapify(int root) {
+    private void heapify(int root) { //run time of O(n*log(n))
         if(root>list.size()-1)return;
         heapify(2*root+1);
         heapify(2*root+2);
