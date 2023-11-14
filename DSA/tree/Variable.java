@@ -1,29 +1,31 @@
 package tree;
 
 public class Variable extends Expr {
-    char name;
-    public Variable(char name) {
-       this.name=name;
+    char symbol;
+    Integer value;
+    public Variable(char symbol) {
+        this.symbol = symbol;
     }
-
-    @Override
     public int eval() {
-        throw new IllegalArgumentException("Variable " +name+ " has no assigned value");
+        if(value == null) {
+            throw new IllegalArgumentException();
+        }
+        return value;
     }
-
-    @Override
+    public void setValue(int value) {
+        this.value = value;
+    }
     public boolean equals(Object obj) {
-        if (! (obj instanceof Variable)) return false;
-        Variable other = (Variable) obj;
-        return this.name == other.name;
+        if(!(obj instanceof Variable)) {
+            return false;
+        }
+        Variable other = (Variable)obj;
+        return symbol == other.symbol;
     }
-
-    @Override
     public Expr simplify() {
         return this;
     }
-
-    public String toString(){
-        return Character.toString(name)+"";
+    public String toString() {
+        return symbol + "";//((Character)symbol).toString()
     }
 }

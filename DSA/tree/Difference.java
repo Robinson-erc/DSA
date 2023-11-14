@@ -26,7 +26,7 @@ public class Difference extends Expr {
            // Expr e1 =new Product(new Constant(-1),right);
             //return new Constant(e1.eval());
             //return e1;
-            return negHelper();
+            return this;
         }
         if (right instanceof Constant && right.equals(new Constant(0))) return left;
         if (left.equals(right)) return  new Constant(0);

@@ -76,44 +76,43 @@ public class LabExprDriver
                 System.err.println ("Not correct");
 
 // ////////  Uncomment the following when ready for the Assign operator
-         // System.out.println ("\nTesting assignment of values to variables");
+          System.out.println ("\nTesting assignment of values to variables");
               
-          // Expr a = new Variable ('a');
-          // Expr b = new Variable ('b');
-          // ok = false;
+          Expr a = new Variable ('a');
+          Expr b = new Variable ('b');
+           ok = false;
 
-// try {     System.out.println (new Sum(a,b).eval()); }
-// catch (IllegalArgumentException iae)
-    // {     ok = true; }
-     // if (!ok)
-            // System.err.println ("Cannot eval a variable, unless it has a value");
-     // ok = false;
+ try {     System.out.println (new Sum(a,b).eval()); }
+ catch (IllegalArgumentException iae)
+     {     ok = true; }
+      if (!ok)
+             System.err.println ("Cannot eval a variable, unless it has a value");
+     ok = false;
      
-     // e1 = new Sum (new Assign(a, new Constant(5)),
-                            // new Assign (b, new Constant (7)));          // e1 = (a=5) + (b=7)                            
-// try {     System.out.println (new Sum(a,b).eval()); }
-// catch (IllegalArgumentException iae)
-    // {     ok = true; }
-       // if (!ok)
-            // System.err.println ("Cannot eval a variable, unless it has a value");
-    
-       // System.out.println ("The value of " + e1 + " is " + e1.eval());
+     e1 = new Sum (new Assign(a, new Constant(5)),
+                            new Assign (b, new Constant (7)));          // e1 = (a=5) + (b=7)
+ try {     System.out.println (new Sum(a,b).eval()); }
+catch (IllegalArgumentException iae)
+     {     ok = true; }
+        if (!ok)
+             System.err.println ("Cannot eval a variable, unless it has a value");
+        System.out.println ("The value of " + e1 + " is " + e1.eval());
           
-       // System.out.println (a + " is " + a.eval());
-       // System.out.println (b + " is " + b.eval());
+        System.out.println (a + " is " + a.eval());
+        System.out.println (b + " is " + b.eval());
           
-       // (new Assign (b, new Constant(5))).eval();                   // b = 5, discard the result
-       // if (b.equals(a))
-            // System.err.println ("Incorrect: a and b are different expressions");
+        (new Assign (b , new Constant(5))).eval();                   // b = 5, discard the result
+        if (b.equals(a))
+             System.err.println ("Incorrect: a and b are different expressions");
             
-       // (new Assign (b, a)).eval();                                           // b = a;
-       // (new Assign (a, new Constant (0))).eval();                            // a = 0;
-       // if (b.eval() != 5)
-            // System.err.println ("Incorrect: Variables should store values, not expressions");
+        (new Assign (b, a)).eval();                                           // b = a;
+        (new Assign (a, new Constant (0))).eval();                            // a = 0;
+        if (b.eval() != 5)
+             System.err.println ("Incorrect: Variables should store values, not expressions");
             
-       // e1 = new Assign(a, new Sum (b, new Constant (0)));
-       // System.out.print  (e1 + " simplifies to ");
-     // System.out.println (e1.simplify());
+        e1 = new Assign(a, new Sum (b, new Constant (0)));
+        System.out.print  (e1 + " simplifies to ");
+      System.out.println (e1.simplify());
   }
   
 }
