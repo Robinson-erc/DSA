@@ -6,7 +6,7 @@ Binary traversal
         -visit the family of left with pre order traversal
         -visit the family of the right child, with pre order traversal.
 
-            -cat cat bat dog fox rat possum quail snake
+            -mouse cat bat dog fox rat possum quail snake
 
                             mouse
                            /     \
