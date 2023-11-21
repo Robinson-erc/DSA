@@ -1,0 +1,7 @@
+-HashTables
+    -The values in a hash table (keys) will
+     provide information which facilitates quick access
+
+     -List of lists
+        -An arraylist filled with linked lists
+        [[LinkedList],[LinkedList],[LinkedList]]
