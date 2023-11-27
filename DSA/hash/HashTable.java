@@ -14,6 +14,8 @@ import list.List;
  * must return the same int.
  * If not equal, the table is efficient if hashCode()
  * returns different ints.
+ * WorstCase Peformance= O(n) few long lists, lots of collisions
+ * Avg Case Performance= O(1) many short lists, few collisions
  * @author sdb & Eric Robinson
  */
 public class HashTable <K>{
@@ -35,9 +37,10 @@ public class HashTable <K>{
         List<K> list = getList(obj);
         return list.contains(obj);
     }
-    private List<K> getList(Object obj){
+    private List<K> getList(Object obj){ //runtime = O(1)
         int code = obj.hashCode();
         code = Math.abs(code);
+        //if (lists.size()==0) return lists.get(0); //i added this in
         code = code % lists.size();
         return lists.get(code);
     }
@@ -87,10 +90,13 @@ public class HashTable <K>{
     /** Clear this HashTable */
     public void clear(){
         for (int i =0; i < lists.size(); i++){
-            lists.remove(i);
+            lists.set(i, new LinkedList<K>());
         }
         size=0;
     }
 
 
+    public Iterator<K> iterator() {
+      return new TableIterator<K>(this);
+    }
 }
