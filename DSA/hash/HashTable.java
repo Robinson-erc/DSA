@@ -99,4 +99,18 @@ public class HashTable <K>{
     public Iterator<K> iterator() {
       return new TableIterator<K>(this);
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Iterator<K> iterator = iterator();
+
+        while (iterator.hasNext()) {
+            sb.append(iterator.next());
+            if (iterator.hasNext()) {
+                sb.append(",");
+            }
+        }
+
+        return "[" + sb.toString() + "]";
+    }
 }

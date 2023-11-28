@@ -32,7 +32,7 @@ public class TableIterator<K> implements Iterator<K> {
     public boolean hasNext() {
         if (it.hasNext()) return true;
 
-        return nextList()<0;
+        return nextList()>=0;
     }
 
     /**

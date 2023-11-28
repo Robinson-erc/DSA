@@ -1,0 +1,4 @@
+-Sets : no duplicate values.
+    {a,b,c} = {a,b,c,b}
+    -Sets have no ordering of the values
+    -The set {a,b,c} = {c,b,a}

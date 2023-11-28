@@ -1,0 +1,11 @@
+-int hashCode()
+    -Should be overidden by the client
+    -Requirement: if two keys are equal, they must have same hashCode
+    -if k1.equals(k2)
+        then
+            k1.hashCode()==k2.hashCode();
+    -For effieciency
+        -if two keys are not equal, we would like their hashCodes to be differenct
+        -If !k1.equals(k2)
+            we hope that
+                k1.hashCode()!=k2.hashCode();
