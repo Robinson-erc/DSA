@@ -40,13 +40,14 @@ public class TreeSet<E extends Comparable> implements Set<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return tree.isEmpty();
     }
 
     @Override
     public void clear() {
-        for (int i =0; i < tree.size(); i++){
-            tree = tree.remove(i);
-        }
+        tree = new EmptyBinarySearchTree<>();
+    }
+    public String toString(){
+        return tree.toString();
     }
 }

@@ -10,7 +10,7 @@ import list.Iterator;
  */ 
 public class LabHashBooksIterator 
 {
-   public static void main()
+   public static void main(String [] args)
    {    HashTable <Book> library = new HashTable <Book> ();
        
         library.put (new Book ("Java", "Barnes", 300, new Date(12,20,1985)));
@@ -59,6 +59,12 @@ public class LabHashBooksIterator
         private static void removeLongBooks (HashTable<Book> lib, int max)
         {  
             
-            // PUT YOUR CODE HERE
+            Iterator<Book> it = lib.iterator();
+            while (it.hasNext())
+            {
+                Book book = it.next();
+                if (book.getPageCount() > max)
+                    it.remove();
+            }
           }
 }

@@ -21,28 +21,28 @@ public class LabHashBooks
       
         Date date = new Date (12,20,1985);
         if (library.isEmpty())
-            System.err.println ("Not correct");
+            System.err.println ("Not correct 1");
         if (! library.containsKey (new Book ("Java", "Barnes", 0, date)))
-            System.err.println ("Not correct");
+            System.err.println ("Not correct 2");
             
         System.out.println ("The size of our library is " + library.size()); 
         
         System.out.println (library.get (new Book ("Compilers", "Bergmann", 0, date)));
         
         if (!library.remove (new Book ("Java", "Barnes", 0, date)))
-             System.err.println ("Not correct");
+             System.err.println ("Not correct 3");
         if (!library.remove (new Book ("Java", "Barnes", 0, date)))
-             System.err.println ("Not correct");
+             System.err.println ("Not correct 4");
         if (library.remove (new Book ("Java", "Barnes", 0, date)))
-             System.err.println ("Not correct");
+             System.err.println ("Not correct 5");
              
         library.clear();
         if (!library.isEmpty())
-            System.err.println ("Not correct");
+            System.err.println ("Not correct 6");
             
         library.put (new Book ("Java", "Barnes", 305, date));
         if (library.size() != 1)
-            System.err.println ("Not correct");
+            System.err.println ("Not correct 7");
         
         }
         

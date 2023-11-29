@@ -35,11 +35,15 @@ public class HashSet<E> implements Set<E> {
 
     @Override
     public boolean isEmpty() {
-        return table.iterator().hasNext();
+        return table.isEmpty();
     }
 
     @Override
     public void clear() {
         table.clear();
+    }
+
+    public String toString(){
+        return table.toString();
     }
 }

@@ -101,16 +101,15 @@ public class HashTable <K>{
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        Iterator<K> iterator = iterator();
-
-        while (iterator.hasNext()) {
-            sb.append(iterator.next());
-            if (iterator.hasNext()) {
-                sb.append(",");
+        String result = "[";
+        TableIterator<K> it = new TableIterator<K>(this);
+        while (it.hasNext()) {
+            result += it.next().toString();
+            if (it.hasNext()) {
+                result +=(", ");
             }
         }
-
-        return "[" + sb.toString() + "]";
+        result += "]";
+        return result.toString();
     }
 }
