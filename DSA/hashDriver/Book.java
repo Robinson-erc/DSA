@@ -49,7 +49,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book [title=" + title + ", author=" + author + ", pageCount=" + pageCount + ", copyRightDate="
+        return "[Book " + title + ", by " + author + ", " + pageCount + " pages, Copyright "
                 + copyRightDate + "]";
     }
 }
