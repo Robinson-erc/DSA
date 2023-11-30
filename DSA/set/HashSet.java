@@ -54,9 +54,9 @@ public class HashSet<E> implements Set<E> {
             }
             return true;
         }
-        while (it.hasNext()) {
-            if (!obj.equals(it.next())) return false;
-        }
+       // while (it.hasNext()) {
+        //    if (!obj.equals(it.next())) return false;
+      //  }
         return true;
     }
 
