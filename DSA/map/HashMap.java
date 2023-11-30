@@ -1,7 +1,12 @@
 package map;
 import hash.*;
-public class HashMap<K, V> implements Map<K, V> {
+import list.Iterator;
 
+import java.security.Key;
+
+public class HashMap<K, V> implements Map<K, V> {
+    K key;
+    V value;
     //beginning of inner class
     class Entry<K, V> {
         K key;
@@ -77,9 +82,15 @@ public class HashMap<K, V> implements Map<K, V> {
 
     @Override
     public K getKey(V value) {
-        Entry<K, V> entry = new Entry<K,V>(null, value);
-        entry = table.get(entry);
-        if (entry == null) return null;
-        return entry.key;
+        Iterator<Entry<K,V>> it = table.iterator();
+        while(it.hasNext())
+        {
+            Entry<K,V> entry = it.next();
+            if(entry.value.equals(value))
+            {
+                return entry.key;
+            }
+        }
+        return null;
     }
 }
