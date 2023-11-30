@@ -2,29 +2,33 @@ package hashDriver;
 
 import hash.HashTable;
 
+import java.util.Random;
+
 public class StudentDriver {
     public static void main(String[] args) {
         HashTable<Student> students = new HashTable<>();
-        students.put(new Student("s1", 1, 3.5, "s1@gmail.com"));
-        students.put(new Student("s2", 2, 2.5, "s2@gmail.com"));
-        students.put(new Student("s3", 3, 4.5, "s3@gmail.com"));
-        students.put(new Student("s4", 4, 3.5, "s4@gmail.com"));
-        students.put(new Student("s5", 5, 2.5, "s5@gmail.com"));
-        students.put(new Student("s6", 6, 4.5, "s6@gmail.com"));
-        students.put(new Student("s7", 7, 3.5, "s7@gmail.com"));
-        students.put(new Student("s8", 8, 2.5, "s8@gmail.com"));
-        students.put(new Student("s9", 9, 4.5, "s9@gmail.com"));
-        students.put(new Student("s10", 10, 3.5, "s10@gmail.com"));
+        int random = new Random().nextInt(1000), random2 = new Random().nextInt(1000), random3 = new Random().nextInt(1000);
+
+        Student s1 = new Student("student1", random, 3.5, "s1@gmail.com");
+        Student s2 = new Student("student2", random2, 2.5, "s2@gmail.com");
+        Student s3 = new Student("student3", random3, 4.5, "s3@gmail.com");
+
+        students.put(s1);
+        students.put(s2);
+        students.put(s3);
+
         System.out.println(students);
+
+        System.out.println("HashTable Contains s1: " + students.containsKey(s1));
+        System.out.println("HashTable Contains s2: " + students.containsKey(s2));
+        System.out.println("HashTable Contains s3: " + students.containsKey(s3));
 
         //check for collisions
         for (int i = 0; i < students.size()-1 ; i++) {
             int hash = students.getList(i).hashCode();
             for (int j = students.size()-1 ; j > i; j--) {
                 int hash2 = students.getList(j).hashCode();
-                if (hash == hash2) {
-                    System.out.println("Collision detected");
-                }
+                if (hash == hash2) System.out.println("Collision detected");
             }
         }
 
