@@ -74,4 +74,12 @@ public class HashMap<K, V> implements Map<K, V> {
     public String toString() {
         return table.toString();
     }
+
+    @Override
+    public K getKey(V value) {
+        Entry<K, V> entry = new Entry<K,V>(null, value);
+        entry = table.get(entry);
+        if (entry == null) return null;
+        return entry.key;
+    }
 }

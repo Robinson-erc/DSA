@@ -3,6 +3,7 @@ package set;
 import list.Iterator;
 import tree.BinaryTree;
 import tree.EmptyBinarySearchTree;
+import tree.TreeIterator;
 
 /**
  * A set implemented with a BinaryTree
@@ -46,6 +47,24 @@ public class TreeSet<E extends Comparable> implements Set<E> {
     @Override
     public void clear() {
         tree = new EmptyBinarySearchTree<>();
+    }
+    public boolean equals(Object obj){
+        if(! (obj instanceof Set)) return false;
+        if(this == obj) return true;
+        Iterator<E> it = iterator();
+        if (obj instanceof Set) {
+
+            Set<E> other = (Set<E>) obj;
+            if (this.size() != other.size()) return false;
+            while (it.hasNext()) {
+                if (!other.contains(it.next())) return false;
+            }
+            return true;
+        }
+        while (it.hasNext()) {
+            if (!obj.equals(it.next())) return false;
+        }
+        return true;
     }
     public String toString(){
         return tree.toString();

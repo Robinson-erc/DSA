@@ -42,6 +42,23 @@ public class HashSet<E> implements Set<E> {
     public void clear() {
         table.clear();
     }
+    public boolean equals(Object obj){
+        if(! (obj instanceof Set)) return false;
+        if(this == obj) return true;
+        Iterator<E> it = iterator();
+        if (obj instanceof Set) {
+            Set<E> other = (Set<E>) obj;
+            if (this.size() != other.size()) return false;
+            while (it.hasNext()) {
+                if (!other.contains(it.next())) return false;
+            }
+            return true;
+        }
+        while (it.hasNext()) {
+            if (!obj.equals(it.next())) return false;
+        }
+        return true;
+    }
 
     public String toString(){
         return table.toString();

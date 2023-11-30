@@ -106,7 +106,7 @@ public class HashTable <K>{
         while (it.hasNext()) {
             result += it.next().toString();
             if (it.hasNext()) {
-                result +=(", ");
+                result +=(",");
             }
         }
         result += "]";
