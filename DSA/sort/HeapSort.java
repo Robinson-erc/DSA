@@ -20,7 +20,7 @@ public class HeapSort<E extends Comparable> implements Sorter<E> {
         }
     }
 
-    public   void percDown (int root, int max) // run time of O(log(n))
+    public void percDown (int root, int max) // run time of O(log(n))
     {
         int bc = biggerChild (root, max);
         while (2*root+1 <= max && greater (bc, root))
