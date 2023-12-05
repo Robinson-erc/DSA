@@ -86,10 +86,7 @@ public class HashMap<K, V> implements Map<K, V> {
         while(it.hasNext())
         {
             Entry<K,V> entry = it.next();
-            if(entry.value.equals(value))
-            {
-                return entry.key;
-            }
+            if(entry.value.equals(value)) return entry.key;
         }
         return null;
     }
