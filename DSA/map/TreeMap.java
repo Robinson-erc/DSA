@@ -24,7 +24,7 @@ public class TreeMap<K extends Comparable,V> implements Map<K, V> {
 
        @Override
        public String toString() {
-           return "[key: " + key.toString() + ", value: " + value.toString()+ "]";
+           return "[key: " + key.toString() + ", value: " + value.toString()+ "]\n";
        }
    }//end of inner class
     BinaryTree<Entry<K, V>> tree = new EmptyBinarySearchTree<Entry<K, V>>();
@@ -66,10 +66,6 @@ public class TreeMap<K extends Comparable,V> implements Map<K, V> {
         return tree.isEmpty();
     }
     public void clear() {
-        Iterator<Entry<K, V>> it = tree.iterator();
-        while(it.hasNext()) {
-            tree.remove(it.next());
-        }
         tree = new EmptyBinarySearchTree<Entry<K, V>>();
     }
 
