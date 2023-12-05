@@ -22,7 +22,11 @@ public class TreeMap<K extends Comparable,V> implements Map<K, V> {
             return this.key.compareTo(other.key);
         }
 
-    }//end of inner class
+       @Override
+       public String toString() {
+           return "[key: " + key.toString() + ", value: " + value.toString()+ "]";
+       }
+   }//end of inner class
     BinaryTree<Entry<K, V>> tree = new EmptyBinarySearchTree<Entry<K, V>>();
 
     @Override
@@ -77,11 +81,9 @@ public class TreeMap<K extends Comparable,V> implements Map<K, V> {
         return entry.key;
     }
     public String toString() {
+        Entry<K, V> entry = new Entry<K, V>(null, null);
         Iterator<Entry<K, V>> it = tree.iterator();
-        String s = "";
-        while(it.hasNext()) {
-            s += it.next().toString() + "\n";
-        }
-        return s.toString();
+        while(it.hasNext()) entry = it.next();
+        return entry.toString();
     }
 }

@@ -40,7 +40,7 @@ public class HwTreeMapDriver
         if (! names.isEmpty())
             System.err.println ("isEmpty or clear is incorrect");
         names.put ("foo", "000");
-        if (!names.get("foo").equals("000"))
+         if (!names.get("foo").equals("000"))
             System.err.println ("incorrect");
         
       // Optional:  Implement a toString() method for TreeMaps
