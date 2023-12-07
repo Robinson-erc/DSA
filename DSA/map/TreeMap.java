@@ -3,6 +3,7 @@ package map;
 import list.Iterator;
 import tree.BinaryTree;
 import tree.EmptyBinarySearchTree;
+import set.*;
 
 /**
  * A map using a binary search tree.
@@ -12,21 +13,21 @@ import tree.EmptyBinarySearchTree;
 public class TreeMap<K extends Comparable,V> implements Map<K, V> {
    //inner class
     class Entry<K extends Comparable, V> implements Comparable<Entry<K, V>>{
-        K key;
-        V value;
-        Entry(K key, V value) {
-            this.key = key;
-            this.value = value;
-        }
-        public int compareTo(Entry<K, V> other) {
+            K key;
+            V value;
+            Entry(K key, V value) {
+                  this.key = key;
+                  this.value = value;
+                }
+             public int compareTo(Entry<K, V> other) {
             return this.key.compareTo(other.key);
         }
 
        @Override
-       public String toString() {
-           return "[key: " + key.toString() + ", value: " + value.toString()+ "]\n";
+            public String toString() {
+           return "" + key.toString() + "=" + value.toString()+ "";
        }
-   }//end of inner class
+        }//end of inner class
     BinaryTree<Entry<K, V>> tree = new EmptyBinarySearchTree<Entry<K, V>>();
 
     @Override
@@ -76,10 +77,37 @@ public class TreeMap<K extends Comparable,V> implements Map<K, V> {
         if (entry == null) return null;
         return entry.key;
     }
-    public String toString() {
-        Entry<K, V> entry = new Entry<K, V>(null, null);
+
+    @Override
+    public Set<K> keySet() {
+        Set<K> set = new TreeSet<K>();
         Iterator<Entry<K, V>> it = tree.iterator();
-        while(it.hasNext()) entry = it.next();
-        return entry.toString();
+        while(it.hasNext()) {
+            Entry<K, V> entry = it.next();
+            set.add(entry.key);
+        }
+        return set;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Map<K, V> other = (Map<K, V>) obj;
+        if (!(obj instanceof Map)) return false;
+        if (this.size() != other.size()) return false;
+        Iterator<Entry<K, V>> it = tree.iterator();
+        while(it.hasNext()){
+            Entry<K, V> entry = it.next();
+            if(!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value)) return false;
+        }
+        return true;
+    }
+
+    public String toString() {
+        Iterator<Entry<K, V>> it = tree.iterator();
+        String out = "["+it.next().toString();
+        while(it.hasNext()){
+            out += ", " + it.next().toString();
+        }
+        return out + "]";
     }
 }

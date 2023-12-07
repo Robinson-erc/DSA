@@ -1,5 +1,5 @@
 package map;
-
+import set.*;
 /**
  * A collection of entries, each of which has a key and a value. Access is fast by key
  * @author sdb & Eric Robinson
@@ -49,4 +49,6 @@ public interface Map <K,V> {
      */
     K getKey(V value);
 
+    /** @return a Set of all the keys in this Map. */
+    Set<K> keySet();
 }

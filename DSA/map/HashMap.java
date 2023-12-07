@@ -1,7 +1,7 @@
 package map;
 import hash.*;
 import list.Iterator;
-
+import set.*;
 import java.security.Key;
 
 public class HashMap<K, V> implements Map<K, V> {
@@ -24,7 +24,7 @@ public class HashMap<K, V> implements Map<K, V> {
         }
         @Override
         public String toString() {
-             return "[" + key + ", " + value + "]";
+             return "" + key + "=" + value + "";
         }
         //end of inner class
     }
@@ -89,5 +89,30 @@ public class HashMap<K, V> implements Map<K, V> {
             if(entry.value.equals(value)) return entry.key;
         }
         return null;
+    }
+
+    @Override
+    public Set<K> keySet() {
+        Set<K> keys = new HashSet<>();
+        Iterator<Entry<K,V>> it = table.iterator();
+        while(it.hasNext())
+        {
+            Entry<K,V> entry = it.next();
+            keys.add(entry.key);
+        }
+        return keys;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Map<K, V> other = (Map<K, V>) obj;
+        if (this.size() != other.size()) return false;
+        Iterator<Entry<K,V>> it = table.iterator();
+        while(it.hasNext())
+        {
+            Entry<K,V> entry = it.next();
+            if(!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value)) return false;
+        }
+        return true;
     }
 }
