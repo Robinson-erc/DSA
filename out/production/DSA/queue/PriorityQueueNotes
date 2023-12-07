@@ -1,0 +1,16 @@
+-Priority Queue
+    -A queue is a first in first out list
+    -A priority queue removes the value with the highest priority
+    -When removing from a priority queue return the value at position 0
+    -The remaining values have to be a heap
+    -Even when adding to the priorit queue you have to make sure the values are still in a heap
+    -Adding to a priority Queue:
+        -Add new largest value at the end
+        -Swap it with its parent
+        -Repeat until it is in the correct position
+        -If it is not in the correct position
+        -Swap it with its parent
+        -Repeat until it is in the correct position
+        -Return the value
+        -Time Complexity: O(log(n))
+     -to get the position of the parent value do (n-1)/2
