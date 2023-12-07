@@ -67,4 +67,7 @@ public class ArrayQueue<E> implements QueueADT<E>
         result = result + "]";
         return result;
     }
+    public int size(){
+        return size;
+    }
 }

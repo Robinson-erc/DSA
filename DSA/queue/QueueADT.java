@@ -31,4 +31,8 @@ public interface QueueADT<E>
      * clear the queue
      */
     void clear();
+    /**
+     * size of the queue
+     */
+    int size();
 }

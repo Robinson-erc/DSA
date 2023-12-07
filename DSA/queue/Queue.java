@@ -32,4 +32,9 @@ public class Queue<E> implements QueueADT<E>
     public String toString(){
         return list.toString();
     }
+
+    @Override
+    public int size() {
+        return list.size();
+    }
 }
