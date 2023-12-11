@@ -11,7 +11,7 @@ public class LabDeleteListIterator
     
     static List <Student> roster;
     
-    public static void main()
+    public static void main(String[] args)
     {   roster = new ArrayList<Student>();
         System.out.println ("Testing ArrayList");
         test();
