@@ -1,0 +1,24 @@
+Graphs
+    -A graph is a set of nodes, connected with arcs
+    -The arcs may be directed or undirected
+    -The nodes may be labeled
+    -Graph path Algorithms
+        -find a path from any node to any other node if possible.
+
+    -in our graph our nodes represent an airport
+    -arcs represent directed flights from one airport to another
+    -shortest path does not matter for this problem
+    phl-cvg
+    phl-jfk
+    phl paris
+    jfk paris
+    jfk phl
+    paris phl
+    cvg jfk
+    sfo lax
+    cvg sfo
+
+    phl--jfk
+       \
+        cvg
+

@@ -3,7 +3,7 @@ import list.*;
 
 /**
  * A StackADT implemented with a list
- *
+ * A Last In First Out (LIFO) list
  * @author SDB &(your name)
  * @version (a version number or a date)
  */

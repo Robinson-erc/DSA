@@ -3,7 +3,7 @@ import list.*;
 
 /**
  * A QueueADT implemented with a list
- *
+ * A first in first out list
  * @author (your name)
  * @version (a version number or a date)
  *
