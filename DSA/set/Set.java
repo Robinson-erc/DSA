@@ -33,5 +33,7 @@ public interface Set<E> {
 
     /** Clear this Set */
     void clear();
+    /** @return the union of this Set with the given Set */
+    Set<E> union (Set <E> other);
 
 }

@@ -42,6 +42,21 @@ public class HashSet<E> implements Set<E> {
     public void clear() {
         table.clear();
     }
+
+    @Override
+    public Set<E> union(Set<E> other) {
+        HashSet<E> result = new HashSet<>();
+        Iterator<E> it = iterator();
+        while (it.hasNext()) {
+            result.add(it.next());
+        }
+        it = other.iterator();
+        while (it.hasNext()) {
+            result.add(it.next());
+        }
+        return result;
+    }
+
     public boolean equals(Object obj){
         if(! (obj instanceof Set)) return false;
         if(this == obj) return true;

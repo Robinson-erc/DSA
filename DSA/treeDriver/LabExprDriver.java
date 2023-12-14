@@ -37,6 +37,7 @@ public class LabExprDriver
       System.out.print (e1 + " simplifies to ");
 	System.out.println (e1.simplify());            //  (5 - 3)
 
+
     
       System.out.println ("\n\nTesting Variables which have no values ");
       

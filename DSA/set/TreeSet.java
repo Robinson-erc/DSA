@@ -48,6 +48,21 @@ public class TreeSet<E extends Comparable> implements Set<E> {
     public void clear() {
         tree = new EmptyBinarySearchTree<>();
     }
+
+    @Override
+    public Set<E> union(Set<E> other) {
+        TreeSet<E> set = new TreeSet<>();
+        Iterator<E> it = iterator();
+        while (it.hasNext()){
+            set.add(it.next());
+        }
+        it = other.iterator();
+        while (it.hasNext()){
+            set.add(it.next());
+        }
+        return set;
+    }
+
     public boolean equals(Object obj){
         if(! (obj instanceof Set)) return false;
         if(this == obj) return true;

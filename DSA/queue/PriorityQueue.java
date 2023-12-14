@@ -6,6 +6,7 @@ import list.*;
 /**
  * A QueueADT, removing the value with the highest priority,
  * The value with the highest priority is the value at position 0 and the largest value
+ *
  */
 public class PriorityQueue<E extends Comparable> implements QueueADT<E> {
 

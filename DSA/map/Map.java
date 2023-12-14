@@ -4,6 +4,7 @@ import set.*;
  * A collection of entries, each of which has a key and a value. Access is fast by key
  * @author sdb & Eric Robinson
  */
+//duplicates permitted
 public interface Map <K,V> {
     /**
      * @return true iff given key is in the map
